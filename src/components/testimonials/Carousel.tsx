@@ -31,9 +31,9 @@ const Carousel: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setPosition((prevPosition) => (prevPosition + 1) % data.length);
-    }, 3000); // Atualiza a cada 3 segundos
+    }, 6000);
 
-    return () => clearInterval(interval); // Limpa o intervalo ao desmontar
+    return () => clearInterval(interval); 
   }, []);
 
   return (
