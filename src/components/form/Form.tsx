@@ -30,14 +30,14 @@ const Form: React.FC = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
+  const onSubmit: SubmitHandler<FormData> = (data: FormData) => {
     console.log(data);
   };
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-featuredCardBlack border rounded-[24px] border-secondGray w-full max-w-[564px] h-[385px] flex flex-col px-[50px] gap-[14px] justify-center"
+      className="bg-featuredCardBlack border rounded-[24px] border-secondGray w-full max-w-[564px] h-[385px] flex flex-col px-[50px] gap-[10px] justify-center"
     >
       <div className="min-h-[70px] ">
         <input

@@ -1,34 +1,43 @@
 import React from "react";
+import { CartIcon, UserIcon, VarosTextLogo } from "../svgs/Icon";
 
 const Header: React.FC = () => {
   return (
-    <header className="flex justify-between items-center">
+    <header className="flex justify-between items-center h-fit pt-10px ">
       {/* Parte do Logo */}
-      <div className="logo">xD</div>
+      <div className="logo">
+        <VarosTextLogo />
+      </div>
 
       {/* Parte dos Quatro Textos */}
-      <div className="menu flex gap-4">
-        <a href="#" className="text-gray-700 hover:text-gray-900">
-          Link 1
+      <div className="menu flex gap-[80px] font-[14px] ">
+        <a href="#" className=" hover:text-gray-200">
+          Produtos
         </a>
-        <a href="#" className="text-gray-700 hover:text-gray-900">
-          Link 2
+        <a href="#" className=" hover:text-gray-200">
+          Blog
         </a>
-        <a href="#" className="text-gray-700 hover:text-gray-900">
-          Link 3
+        <a href="#" className=" hover:text-gray-200">
+          Conteúdos
         </a>
-        <a href="#" className="text-gray-700 hover:text-gray-900">
-          Link 4
+        <a href="#" className=" hover:text-gray-200">
+          Quem Somos
         </a>
       </div>
 
       {/* Parte dos Dois Textos */}
-      <div className="actions flex gap-4">
-        <a href="#" className="text-gray-700 hover:text-gray-900">
-          Link 5
+      <div className="actions flex gap-[12px]">
+        <a
+          href="#"
+          className="flex gap-[16px] jusitfy-center items-center hover:text-gray-200"
+        >
+          <CartIcon /> <span>Assinar Agora</span>
         </a>
-        <a href="#" className="text-gray-700 hover:text-gray-900">
-          Link 6
+        <a
+          href="#"
+          className="flex gap-[16px] jusitfy-center items-center hover:text-gray-200"
+        >
+          <UserIcon /> <span>Entrar</span>
         </a>
       </div>
     </header>

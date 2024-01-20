@@ -6,6 +6,7 @@ import {
 } from "../svgs/Icon";
 import AnimatedWrapper from "../animations/AnimatedWrapper";
 import { AnimatePresence, Variants, motion } from "framer-motion";
+import { DropdownData } from "@/data/DropdownData";
 
 const textVariants: Variants = {
   initial: {
@@ -53,25 +54,33 @@ const data = [
 
 type GraphProps = {
   option: number;
+  selectedDropdown: string;
 };
 
-const Graph: React.FC<GraphProps> = ({ option }) => {
+const Graph: React.FC<GraphProps> = ({
+  option,
+  selectedDropdown,
+}: GraphProps) => {
+  const graphData = DropdownData.find(
+    (item) => item.title === selectedDropdown
+  )?.items;
+
   return (
     <AnimatedWrapper from="right">
-      <div className="w-full flex justify-center  items-center overflow-hidden">
-        <div className="desktop:w-[662px] tablet:w-[580px] mobile:w-full gap-[16px] overflow-hidden flex flex-col pl-[41px] pt-[30px] bg-featuredCardBlack rounded-[32px] ">
+      <div className="w-full flex justify-center h-full relative items-center">
+        <div className="relative z-10  desktop:w-[662px] tablet:w-[580px] mobile:w-full gap-[16px] overflow-hidden flex flex-col pl-[41px] pt-[30px] bg-featuredCardBlack rounded-[32px] ">
           <div className="flex gap-[16px] justify-center items-center w-fit overflow-hidden ">
-            {data[option].icon}
+            {graphData?.[option].icon}
             <div className="overflow-hidden min-h-[25px] ">
               <AnimatePresence mode="wait">
                 <motion.p
-                  key={data[option].name}
+                  key={graphData?.[option].label}
                   variants={textVariants}
                   initial="initial"
                   animate="animate"
                   exit="exit"
                 >
-                  {data[option].name}
+                  {graphData?.[option].label}
                 </motion.p>
               </AnimatePresence>
             </div>
@@ -80,28 +89,28 @@ const Graph: React.FC<GraphProps> = ({ option }) => {
             <div className="overflow-hidden min-h-[110px]  flex items-center">
               <AnimatePresence mode="wait">
                 <motion.h1
-                  key={data[option].title}
+                  key={graphData?.[option].title}
                   variants={textVariants}
                   initial="initial"
                   animate="animate"
                   exit="exit"
                   className="text-[38px] mobile:text-[24px] font-semibold "
                 >
-                  {data[option].title}
+                  {graphData?.[option].title}
                 </motion.h1>
               </AnimatePresence>
             </div>
             <div className="overflow-hidden min-h-[75px]  flex items-center">
               <AnimatePresence mode="wait">
                 <motion.p
-                  key={data[option].text}
+                  key={graphData?.[option].text}
                   variants={textVariants}
                   initial="initial"
                   animate="animate"
                   exit="exit"
                   className="text-[16px] font-medium "
                 >
-                  {data[option].text}
+                  {graphData?.[option].text}
                 </motion.p>
               </AnimatePresence>
             </div>
@@ -114,6 +123,7 @@ const Graph: React.FC<GraphProps> = ({ option }) => {
             />
           </div>
         </div>
+        <div className="absolute w-[438px] h-[444px] rounded-[100px] bg-radial-custom z-0 left-[50%] top-[40%] blur-[15px]  " />
       </div>
     </AnimatedWrapper>
   );

@@ -4,9 +4,7 @@ import Menu from "./Menu";
 import Graph from "./Graph";
 
 const Goals: React.FC = () => {
-  const [selectedDropdown, setSelectedDropdown] = useState<string | null>(
-    "Carteiras"
-  );
+  const [selectedDropdown, setSelectedDropdown] = useState<string>("Carteiras");
 
   const [option, setOption] = useState(0);
 
@@ -26,8 +24,9 @@ const Goals: React.FC = () => {
           selectedDropdown={selectedDropdown}
           setSelectedDropdown={setSelectedDropdown}
           setOption={setOption}
+          option={option}
         />
-        <Graph option={option} />
+        <Graph option={option} selectedDropdown={selectedDropdown} />
       </div>
     </div>
   );

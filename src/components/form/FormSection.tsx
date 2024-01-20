@@ -4,7 +4,7 @@ import Form from "./Form";
 
 const FormSection: React.FC = () => {
   return (
-    <div className="w-full flex">
+    <div className="w-full flex flex-col desktop:flex-row tablet:flex-row gap-[20px] ">
       <AnimatedWrapper from="left">
         <div className="w-full">
           <div>

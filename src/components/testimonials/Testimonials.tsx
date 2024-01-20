@@ -4,7 +4,7 @@ import AnimatedWrapper from "../animations/AnimatedWrapper";
 
 const Testimonials: React.FC = () => {
   return (
-    <div className="w-full flex">
+    <div className="w-full flex flex-col desktop:flex-row tablet:flex-row gap-[20px] ">
       <AnimatedWrapper from="left">
         <div className="flex flex-col gap-[80px] ">
           <div>
@@ -21,10 +21,10 @@ const Testimonials: React.FC = () => {
       <AnimatedWrapper from="right">
         <div className="w-full flex flex-col justify-start items-center  ">
           <div
-            className="bg-cover bg-center w-[564px] h-[400px] "
+            className="bg-cover bg-center w-[564px] tablet:w-[414px ] mobile:w-full  h-[400px] "
             style={{ backgroundImage: "url('/threeGuysImage.png')" }}
           />
-          <div className="w-[564px] flex justify-center items-center border rounded-[32px] py-[16px] border-featuredCardGray h-[104px] ">
+          <div className="w-[564px] tablet:w-[414px ] mobile:w-full  flex justify-center items-center border rounded-[32px] py-[16px] border-featuredCardGray h-[104px] ">
             <div className="flex gap-[38px] ">
               <div className="max-w-[100px] flex flex-col items-center  ">
                 <p className="text-[18px] font-bold ">+1000</p>

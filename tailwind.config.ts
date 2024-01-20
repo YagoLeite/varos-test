@@ -12,6 +12,8 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "radial-custom":
+          "radial-gradient(50% 50% at 50% 50%, #D3D6DF 0%, rgba(19, 19, 19, 0.00) 100%)",
       },
       backgroundColor: {
         greenHero: "rgba(25, 200, 25, 0.40)",

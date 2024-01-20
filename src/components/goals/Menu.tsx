@@ -2,9 +2,10 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import AnimatedWrapper from "../animations/AnimatedWrapper";
+import { DropdownData } from "@/data/DropdownData";
 
 type DropdownItem = {
-  icon: JSX.Element; // Substitua por seu componente de ícone
+  icon: JSX.Element;
   label: string;
 };
 
@@ -14,12 +15,14 @@ type DropdownProps = {
   isOpen: boolean;
   setSelected: (title: string) => void;
   setOption: (number: number) => void;
+  option: number;
 };
 
 type MenuProps = {
-  selectedDropdown: string | null;
-  setSelectedDropdown: (title: string | null) => void;
+  selectedDropdown: string;
+  setSelectedDropdown: (title: string) => void;
   setOption: (number: number) => void;
+  option: number;
 };
 
 const containerVariants = {
@@ -38,8 +41,6 @@ const containerVariants = {
     opacity: 0,
     transition: {
       duration: 0,
-      //   ease: "easeOut",
-      //   when: "afterChildren",
     },
   },
 };
@@ -63,19 +64,25 @@ const Dropdown: React.FC<DropdownProps> = ({
   isOpen,
   setSelected,
   setOption,
+  option,
 }) => {
   return (
     <div className="w-[270px] mobile:w-full flex flex-col gap-[16px] text-[14px] ">
       <button
-        onClick={() => setSelected(title)}
-        className="flex tablet:w-[270px] mobile:w-full h-[64px] bg-featuredCardBlack rounded-[40px] justify-center gap-2 items-center "
+        onClick={() => {
+          setSelected(title);
+          setOption(0);
+        }}
+        className={`flex tablet:w-[270px] mobile:w-full h-[64px] ${
+          isOpen ? "bg-inputBackground" : "bg-featuredCardBlack"
+        } rounded-[40px] justify-center gap-2 items-center`}
       >
-        {title} <span>{isOpen ? "▲" : "▼"}</span>
+        {title} <span>{!isOpen ? "▶" : "▼"}</span>
       </button>
       <AnimatePresence initial={false} mode={"popLayout"}>
         {isOpen && (
           <motion.div
-            key="content" // Chave constante para o conteúdo
+            key="content"
             variants={containerVariants}
             initial="closed"
             animate="open"
@@ -86,7 +93,9 @@ const Dropdown: React.FC<DropdownProps> = ({
               <motion.div
                 key={index}
                 onClick={() => setOption(index)}
-                className="rounded-[32px] flex items-center justify-center gap-[16px] tablet:w-[270px] mobile:w-full bg-purple-400 max-w-[213px] p-[16px]"
+                className={`rounded-[32px] ${
+                  option === index && "bg-inputBackground"
+                } flex items-center justify-center gap-[16px]  tablet:w-[270px] mobile:w-full  max-w-[213px] p-[16px]`}
                 variants={itemVariants}
                 initial="closed"
                 animate="open"
@@ -107,81 +116,13 @@ const Menu: React.FC<MenuProps> = ({
   selectedDropdown,
   setSelectedDropdown,
   setOption,
+  option,
 }) => {
-  const dropdowns = [
-    {
-      title: "Carteiras",
-      items: [
-        // Substitua pelo seu componente de ícone e rótulos apropriados
-        {
-          icon: <div className="bg-green-500 w-4 h-4" />,
-          label: "Carteira Seleção",
-        },
-        {
-          icon: <div className="bg-blue-500 w-4 h-4" />,
-          label: "Carteira FATOR",
-        },
-        {
-          icon: <div className="bg-yellow-500 w-4 h-4" />,
-          label: "Carteira Dividendos",
-        },
-        {
-          icon: <div className="bg-green-500 w-4 h-4" />,
-          label: "Carteira Seleção",
-        },
-      ],
-    },
-    {
-      title: "Cursos",
-      items: [
-        // Substitua pelo seu componente de ícone e rótulos apropriados
-        {
-          icon: <div className="bg-green-500 w-4 h-4" />,
-          label: "Carteira Seleção",
-        },
-        {
-          icon: <div className="bg-blue-500 w-4 h-4" />,
-          label: "Carteira FATOR",
-        },
-        {
-          icon: <div className="bg-yellow-500 w-4 h-4" />,
-          label: "Carteira Dividendos",
-        },
-        {
-          icon: <div className="bg-green-500 w-4 h-4" />,
-          label: "Carteira Seleção",
-        },
-      ],
-    },
-    {
-      title: "Consultoria",
-      items: [
-        // Substitua pelo seu componente de ícone e rótulos apropriados
-        {
-          icon: <div className="bg-green-500 w-4 h-4" />,
-          label: "Carteira Seleção",
-        },
-        {
-          icon: <div className="bg-blue-500 w-4 h-4" />,
-          label: "Carteira FATOR",
-        },
-        {
-          icon: <div className="bg-yellow-500 w-4 h-4" />,
-          label: "Carteira Dividendos",
-        },
-        {
-          icon: <div className="bg-green-500 w-4 h-4" />,
-          label: "Carteira Seleção",
-        },
-      ],
-    },
-  ];
-
   return (
-    <div className="w-full tablet:w-[300px] ">
+    <div className="w-full">
       <AnimatedWrapper from="left">
         <div className="p-4 space-y-2">
-          {dropdowns.map((dropdown) => (
+          {DropdownData.map((dropdown) => (
             <Dropdown
               key={dropdown.title}
               title={dropdown.title}
@@ -189,6 +130,7 @@ const Menu: React.FC<MenuProps> = ({
               isOpen={selectedDropdown === dropdown.title}
               setSelected={setSelectedDropdown}
               setOption={setOption}
+              option={option}
             />
           ))}
         </div>
