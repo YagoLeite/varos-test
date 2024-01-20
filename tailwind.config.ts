@@ -17,9 +17,11 @@ const config: Config = {
         greenHero: "rgba(25, 200, 25, 0.40)",
         wrapperBlack: "#131313",
         featuredCardBlack: "#131516",
+        inputBackground: "#222729",
       },
       textColor: {
         greenHero: "#00F700",
+        quoteGreen: "#19C819",
       },
 
       borderColor: {

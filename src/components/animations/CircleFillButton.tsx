@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useRef, MouseEvent } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
-const circleVariants = {
+const circleVariants: Variants = {
   initial: { scale: 1 },
   animate: {
     scale: 40,

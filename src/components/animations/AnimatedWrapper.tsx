@@ -1,5 +1,5 @@
 "use client";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation, useInView, Variants } from "framer-motion";
 import React, { ReactNode, useEffect, useRef } from "react";
 
 interface AnimatedWrapperProps {
@@ -15,7 +15,7 @@ const AnimatedWrapper: React.FC<AnimatedWrapperProps> = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const variants = {
+  const variants: Variants = {
     hidden: { opacity: 0, x: from === "left" ? "-100%" : "100%" },
     visible: {
       opacity: 1,
