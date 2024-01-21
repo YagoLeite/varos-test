@@ -67,7 +67,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   option,
 }) => {
   return (
-    <div className="w-[270px] mobile:w-full flex flex-col gap-[16px] text-[14px] ">
+    <div className="tablet:w-[270px] desktop:w-[270px] mobile:w-full flex flex-col gap-[16px] text-[14px] ">
       <button
         onClick={() => {
           setSelected(title);
@@ -87,7 +87,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             initial="closed"
             animate="open"
             exit="closed"
-            className="origin-top tablet:w-[270px] mobile:w-full rounded-[32px] bg-featuredCardBlack border gap-[22px] flex flex-col border-secondGray py-[32px] items-center"
+            className="origin-top tablet:w-[270px] mobile:pl-[32px] tablet:pl-[0px] desktop:pl-[0px] mobile:w-full rounded-[32px] bg-featuredCardBlack border gap-[22px] flex flex-col border-secondGray py-[32px] desktop:items-center tablet:items-center mobile:items-start "
           >
             {items.map((item, index) => (
               <motion.div
@@ -119,9 +119,9 @@ const Menu: React.FC<MenuProps> = ({
   option,
 }) => {
   return (
-    <div className="w-full">
-      <AnimatedWrapper from="left">
-        <div className="p-4 space-y-2">
+    <AnimatedWrapper from="left">
+      <div className="flex w-full  mobile:justify-center tablet:justify-start desktop:justify-start">
+        <div className="p-4 space-y-2 w-full">
           {DropdownData.map((dropdown) => (
             <Dropdown
               key={dropdown.title}
@@ -134,8 +134,8 @@ const Menu: React.FC<MenuProps> = ({
             />
           ))}
         </div>
-      </AnimatedWrapper>
-    </div>
+      </div>
+    </AnimatedWrapper>
   );
 };
 

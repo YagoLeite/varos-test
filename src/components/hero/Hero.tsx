@@ -18,7 +18,7 @@ import Marquee from "react-fast-marquee";
 
 const Hero: React.FC = () => {
   return (
-    <div className="w-full h-full flex flex-grow justify-center items-center gap-10 ">
+    <div className="w-full h-full flex flex-grow justify-center items-center ">
       <div className="w-full overflow-hidden h-fit ">
         <AnimatedWrapper from="left">
           <div className="w-full max-w-[664px]  flex flex-col gap-[24px]">
@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
           </div>
         </AnimatedWrapper>
       </div>
-      <div className="w-[50%] hidden tablet:flex desktop:flex overflow-hidden h-fit   ">
+      <div className="w-[50%] hidden tablet:flex desktop:flex overflow-hidden h-fit  ">
         <AnimatedWrapper from="right">
           <div className="w-full  flex flex-col gap-[70px]  items-start  pb-[15px]  ">
             <div className="relative ">
@@ -70,8 +70,8 @@ const Hero: React.FC = () => {
               </div>
             </div>
 
-            <div className="relative">
-              <FeaturedCards style={{ marginLeft: "40px" }}>
+            <div className="relative min-w-[255px] ">
+              <FeaturedCards style={{ marginLeft: "28px" }}>
                 <div className="w-[51px] h-[46px] rounded-[8px] border border-featuredCardGray flex justify-center items-center">
                   <BarGraphIcon />
                 </div>

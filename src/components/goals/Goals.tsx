@@ -26,6 +26,7 @@ const Goals: React.FC = () => {
           setOption={setOption}
           option={option}
         />
+
         <Graph option={option} selectedDropdown={selectedDropdown} />
       </div>
     </div>

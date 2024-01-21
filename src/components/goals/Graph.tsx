@@ -1,9 +1,4 @@
 import React from "react";
-import {
-  BarGraphIcon,
-  HorizontalLinesIcon,
-  PowerButtonIcon,
-} from "../svgs/Icon";
 import AnimatedWrapper from "../animations/AnimatedWrapper";
 import { AnimatePresence, Variants, motion } from "framer-motion";
 import { DropdownData } from "@/data/DropdownData";
@@ -24,33 +19,6 @@ const textVariants: Variants = {
     transition: { duration: 0.5 },
   },
 };
-
-const data = [
-  {
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ",
-    icon: <HorizontalLinesIcon />,
-    name: "Carteira Seleção",
-  },
-  {
-    title: "Perfeito para curtir a Bolsa",
-    text: "Juntamos o que há de melhor nas Carteiras VAROS: uma estratégia completa para você ter resultados exponenciais.",
-    icon: <PowerButtonIcon />,
-    name: "Carteira FATOR",
-  },
-  {
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ",
-    icon: <BarGraphIcon />,
-    name: "Carteira Dividendos",
-  },
-  {
-    title: "A combinação perfeita pra você aproveitar a virada da Bolsa",
-    text: "Juntamos o que há de melhor nas Carteiras VAROS: uma estratégia completa para você ter resultados exponenciais. ",
-    icon: <HorizontalLinesIcon />,
-    name: "Carteira Seleção",
-  },
-];
 
 type GraphProps = {
   option: number;
@@ -85,7 +53,7 @@ const Graph: React.FC<GraphProps> = ({
               </AnimatePresence>
             </div>
           </div>
-          <div className="flex flex-col gap-[1px] w-[355px]  ">
+          <div className="flex flex-col gap-[1px] max-w-[355px] w-full  ">
             <div className="overflow-hidden min-h-[110px]  flex items-center">
               <AnimatePresence mode="wait">
                 <motion.h1
@@ -94,7 +62,7 @@ const Graph: React.FC<GraphProps> = ({
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  className="text-[38px] mobile:text-[24px] font-semibold "
+                  className="text-[38px] mobile:text-[20px] font-semibold "
                 >
                   {graphData?.[option].title}
                 </motion.h1>

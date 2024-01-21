@@ -43,7 +43,7 @@ export const DropdownData = [
         icon: <FiiIcon />,
         label: "Carteira de FIIs",
         title: "Lorem ipsum dolor scit amet, consectetur adipiscing et, ",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed dso eiusmod tempor incididcunt ut labore et dolore magna aliqua. Ut enim ",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing, sed dso eiusmod tempor incididcunt ut labore et dolore magna aliqua. Ut enim ",
       },
       {
         icon: <SmallCapsIcon />,

@@ -19,21 +19,21 @@ const Testimonials: React.FC = () => {
         </div>
       </AnimatedWrapper>
       <AnimatedWrapper from="right">
-        <div className="w-full flex flex-col justify-start items-center  ">
+        <div className="w-full flex flex-col justify-start items-center gap-[30px] ">
           <div
-            className="bg-cover bg-center w-[564px] tablet:w-[414px ] mobile:w-full  h-[400px] "
+            className="bg-cover bg-center desktop:w-[564px] tablet:w-[414px] mobile:w-full  desktop:h-[400px] tablet:h-[350px] mobile:h-[252px] h-full "
             style={{ backgroundImage: "url('/threeGuysImage.png')" }}
           />
-          <div className="w-[564px] tablet:w-[414px ] mobile:w-full  flex justify-center items-center border rounded-[32px] py-[16px] border-featuredCardGray h-[104px] ">
-            <div className="flex gap-[38px] ">
+          <div className="desktop:w-[564px] tablet:w-[414px] mobile:w-full  flex justify-center items-center border rounded-[32px] py-[16px] border-featuredCardGray h-[104px] ">
+            <div className="flex tablet:gap-[38px] mobile:gap-[16px] desktop:gap-[38px] ">
               <div className="max-w-[100px] flex flex-col items-center  ">
                 <p className="text-[18px] font-bold ">+1000</p>
-                <p className="text-[14px] font-normal text-center ">
+                <p className="text-[14px] font-[400] text-center ">
                   Nota média geral das aulas
                 </p>
               </div>
               <div className="max-w-[100px] flex flex-col items-center  ">
-                <p className="text-[18px] font-bold ">4,8/5</p>
+                <p className="text-[18px] font-bold text-quoteGreen ">4,8/5</p>
                 <p className="text-[14px] font-normal text-center ">
                   Nota média geral das aulas
                 </p>

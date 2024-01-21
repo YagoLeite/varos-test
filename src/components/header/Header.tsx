@@ -1,12 +1,17 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { CartIcon, UserIcon, VarosTextLogo } from "../svgs/Icon";
 import Nav from "./Nav";
 
 const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="flex justify-between items-start h-[64px] max-h-[64px] pt-[10px] ">
-      <div className="logo">
+    <header className="flex justify-between items-start h-[64px] max-h-[64px] pt-[14px] ">
+      <div className="logo mobile:hidden tablet:block desktop:block ">
         <VarosTextLogo />
+      </div>
+      <div className="logo mobile:block tablet:hidden desktop:hidden ">
+        {!isOpen && <VarosTextLogo />}
       </div>
 
       <div className="menu desktop:flex tablet:hidden mobile:hidden gap-[80px] font-[14px] ">
@@ -39,8 +44,8 @@ const Header: React.FC = () => {
         </a>
       </div>
 
-      <div className="desktop:hidden tablet:block mobile:block items-end relative z-20">
-        <Nav />
+      <div className="desktop:hidden tablet:block mobile:block items-end w-full flex relative z-20">
+        <Nav isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     </header>
   );
