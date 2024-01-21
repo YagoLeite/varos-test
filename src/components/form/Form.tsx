@@ -26,6 +26,7 @@ const Form: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormData>({
     resolver: yupResolver(schema),
   });
@@ -46,6 +47,7 @@ const Form: React.FC = () => {
 
       const responseData = await response.json();
       console.log(responseData.message);
+      reset();
     } catch (error) {
       console.error(error);
     }
