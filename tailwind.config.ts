@@ -20,15 +20,19 @@ const config: Config = {
         wrapperBlack: "#131313",
         featuredCardBlack: "#131516",
         inputBackground: "#222729",
+        navButtonGreen: "#19C819",
+        dividerGray: "#B0B7BE",
       },
       textColor: {
         greenHero: "#00F700",
         quoteGreen: "#19C819",
+        customGray: "#B0B7BE",
       },
 
       borderColor: {
         featuredCardGray: "#4D5358",
         secondGray: "#222729",
+        navButton: "#FAFAFA",
       },
       fontFamily: {
         sans: ["Red Hat Display", "sans-serif"],

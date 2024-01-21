@@ -1244,3 +1244,70 @@ export const VzaIcon = () => {
     </svg>
   );
 }; 
+
+export const HamburgIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="36"
+      height="18"
+      viewBox="0 0 36 18"
+      fill="none"
+    >
+      <path
+        d="M2 16H34.5M2 9H34.5M2 2H34.5"
+        stroke="#FAFAFA"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
+};
+
+export const CloseIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        d="M18 7.05L16.95 6L12 10.95L7.05 6L6 7.05L10.95 12L6 16.95L7.05 18L12 13.05L16.95 18L18 16.95L13.05 12L18 7.05Z"
+        fill="#FAFAFA"
+      />
+    </svg>
+  );
+};
+
+export const DividerIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="390"
+      height="2"
+      viewBox="0 0 390 2"
+      fill="none"
+    >
+      <path d="M0 1L390 0.999966" stroke="#222729" />
+    </svg>
+  );
+};
+
+export const RightArrowIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="16"
+      viewBox="0 0 20 16"
+      fill="none"
+    >
+      <path
+        d="M11.8352 2.24L10.9147 3.04L15.8856 7.44H1.89331V8.56H15.8856L10.9147 12.96L11.8352 13.76L18.4632 8L11.8352 2.24Z"
+        fill="#FAFAFA"
+      />
+    </svg>
+  );
+};

@@ -95,7 +95,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 onClick={() => setOption(index)}
                 className={`rounded-[32px] ${
                   option === index && "bg-inputBackground"
-                } flex items-center justify-center gap-[16px]  tablet:w-[270px] mobile:w-full  max-w-[213px] p-[16px]`}
+                } flex items-center justify-start gap-[16px] cursor-pointer tablet:w-[270px] mobile:w-full  max-w-[213px] py-[16px] pl-[25px] `}
                 variants={itemVariants}
                 initial="closed"
                 animate="open"
