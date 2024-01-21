@@ -30,8 +30,25 @@ const Form: React.FC = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<FormData> = (data: FormData) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Erro ao enviar o formulário: ${response.statusText}`);
+      }
+
+      const responseData = await response.json();
+      console.log(responseData.message);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
