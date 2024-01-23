@@ -6,7 +6,7 @@ import Nav from "./Nav";
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="flex justify-between items-start h-[64px] max-h-[64px] pt-[14px] ">
+    <header className="flex justify-between items-start h-[64px] max-h-[64px] pt-[35px] ">
       <div className="logo mobile:hidden tablet:block desktop:block ">
         <VarosTextLogo />
       </div>

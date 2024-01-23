@@ -31,7 +31,7 @@ const Carousel: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setPosition((prevPosition) => (prevPosition + 1) % data.length);
-    }, 3000);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, []);

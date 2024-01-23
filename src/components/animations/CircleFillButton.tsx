@@ -65,7 +65,7 @@ const CircleFillButton: React.FC = () => {
           />
         )}
       </AnimatePresence>
-      <p className="text-lg z-10 text-greenHero">Compre agora</p>
+      <p className="text-lg z-10 text-greenHero">Comprar agora</p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

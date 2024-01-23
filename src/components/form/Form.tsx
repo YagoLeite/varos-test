@@ -101,7 +101,7 @@ const Form: React.FC = () => {
 
       <button
         type="submit"
-        className="bg-blue-500 text-white p-[10px] rounded-[4px] hover:bg-blue-600 w-full"
+        className="bg-navButtonGreen text-black p-[10px] rounded-[4px]  w-full"
       >
         QUERO ME INSCREVER
       </button>

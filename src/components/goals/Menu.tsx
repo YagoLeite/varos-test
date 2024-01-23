@@ -121,7 +121,7 @@ const Menu: React.FC<MenuProps> = ({
   return (
     <AnimatedWrapper from="left">
       <div className="flex w-full  mobile:justify-center tablet:justify-start desktop:justify-start">
-        <div className="p-4 space-y-2 w-full">
+        <div className="p-4 space-y-2 w-full desktop:min-h-[770px]">
           {DropdownData.map((dropdown) => (
             <Dropdown
               key={dropdown.title}

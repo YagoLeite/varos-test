@@ -27,6 +27,7 @@ const config: Config = {
         greenHero: "#00F700",
         quoteGreen: "#19C819",
         customGray: "#B0B7BE",
+        customTurquoise: "#00F0C9",
       },
 
       borderColor: {
